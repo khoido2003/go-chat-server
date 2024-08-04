@@ -54,6 +54,10 @@ func main() {
 
 	///////////////////////////////////////////////////
 
+	r.Handle("/ws", http.HandlerFunc(HandleConnection))
+	/////////////////////////////////////////
+
+	// Init the server
 	srv := &http.Server{
 		Handler: r,
 		Addr:    ":" + portStr,
